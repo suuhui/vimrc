@@ -19,6 +19,11 @@ inoremap [ []<ESC>i
 inoremap { {<CR>}<ESC>kA<CR>
 inoremap ' ''<ESC>i
 inoremap " ""<ESC>i
+" 按Ctrl+h/j/k/l映射到方向键
+inoremap <C-l> <Right>
+inoremap <C-k> <Up>
+inoremap <C-j> <Down>
+inoremap <C-h> <Left>
 
 set cursorline
 set cursorcolumn
