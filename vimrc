@@ -24,6 +24,10 @@ inoremap <C-l> <Right>
 inoremap <C-k> <Up>
 inoremap <C-j> <Down>
 inoremap <C-h> <Left>
+inoremap <C-g> <ESC>o
+inoremap <C-e> <ESC>A
+inoremap <C-f> <ESC>^i
+inoremap <C-x> <ESC>lxi
 
 set cursorline
 set cursorcolumn
