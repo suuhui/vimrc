@@ -6,9 +6,19 @@ set syntax=on
 
 execute pathogen#infect()
 
-set autoindent
+set cindent
 set smartindent
 " highlight current line and column
+
+" 'i'代表插入模式
+" 'nore' "no recursion"代表不递归
+" '<ESC>,<CR>' 代表键盘上的键
+" map 后面的第一个参数指的是输入 第二个参数是执行的命令
+inoremap ( ()<ESC>i
+inoremap [ []<ESC>i
+inoremap { {<CR>}<ESC>kA<CR>
+inoremap ' ''<ESC>i
+inoremap " ""<ESC>i
 
 set cursorline
 set cursorcolumn
@@ -75,7 +85,7 @@ let NERDTreeShowBookmarks=1
 " autocmd StdinReadPre * let s:std_in=1
 " autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | endif
 
-" 当vim中没有其他文件，值剩下nerdtree的时候，自动关闭窗口
+" 当vim中没有其他文件，只剩下nerdtree的时候，自动关闭窗口
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
 " 改变nerdtree的箭头
