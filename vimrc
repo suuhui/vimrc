@@ -100,3 +100,29 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isT
 " 改变nerdtree的箭头
 let g:NERDTreeDirArrowExpandable = '▸'
 let g:NERDTreeDirArrowCollapsible = '▾'
+
+" taglist配置
+let Tlist_Ctags_Cmd = '/usr/bin/ctags'
+let Tlist_Show_One_File = 1 " only show this file's tag 
+let Tlist_Exit_OnlyWindow = 1 " if taglist window is the last window, then quit vim
+let Tlist_Auto_Open = 0 " not auto open taglist window
+let Tlist_Use_Right_Window = 0 " show taglist in left
+map <C-m> :TlistToggle<CR>
+
+
+
+if has("cscope") && filereadable("/usr/bin/cscope")
+   set csprg=/usr/local/bin/cscope
+   set csto=0
+   set cst
+   set nocsverb
+   " add any database in current directory
+   if filereadable("cscope.out")
+      cs add cscope.out
+   " else add database pointed to by environment
+   elseif $CSCOPE_DB != ""
+      cs add $CSCOPE_DB
+   endif
+   set csverb
+endif
+
