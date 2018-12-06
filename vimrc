@@ -111,7 +111,7 @@ map <C-m> :TlistToggle<CR>
 
 
 
-if has("cscope") && filereadable("/usr/bin/cscope")
+if has("cscope") && filereadable("/usr/local/bin/cscope")
    set csprg=/usr/local/bin/cscope
    set csto=0
    set cst
